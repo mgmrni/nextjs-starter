@@ -1,0 +1,46 @@
+{
+  "name": "Next.js Node24 Devcontainer",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "builder"
+  },
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000],
+  // "postCreateCommand": "yarn install",
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.stylelint": "explicit"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "[markdown]": {
+          "editor.formatOnSave": false
+        }
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "oderwat.indent-rainbow",
+        "PKief.material-icon-theme",
+        "prisma.prisma"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}
