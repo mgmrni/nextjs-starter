@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  node:
+    container_name: my-app
+    build:
+      context: .
+      target: builder
+      dockerfile: ./Dockerfile
+    environment:
+      - TZ='Asia/Tokyo'
+    volumes:
+      - .:/workspace:cached
+      - /workspace/node_modules
+      - /workspace/.next

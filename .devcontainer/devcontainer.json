@@ -1,21 +1,16 @@
 {
   "name": "Next.js Node24 Devcontainer",
-  "build": {
-    "dockerfile": "../Dockerfile",
-    "context": "..",
-    "target": "builder"
-  },
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
+  "service": "node",
   "workspaceFolder": "/workspace",
   "forwardPorts": [3000],
   "postCreateCommand": "yarn install",
   "postStartCommand": "yarn dev",
-  "remoteUser": "node",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
+  "remoteUser": "root",
   "customizations": {
     "vscode": {
       "settings": {
+        // "remote.SSH.configFile": "/root/.ssh/config",
         "editor.codeActionsOnSave": {
           "source.fixAll.eslint": "explicit",
           "source.fixAll.stylelint": "explicit"
