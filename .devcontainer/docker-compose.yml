@@ -2,3 +2,5 @@ version: "3.9"
 services:
   node:
     command: sleep infinity
+    ports:
+      - "3001:3000"
