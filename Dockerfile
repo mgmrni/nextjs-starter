@@ -8,8 +8,8 @@ WORKDIR /app
 RUN corepack enable
 RUN corepack prepare pnpm@11 --activate
 
-COPY package.json .npmrc ./
-RUN pnpm install
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
