@@ -1,0 +1,10 @@
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+minimum-release-age: 10080
+block-exotic-subdeps: true
+trust-policy: no-downgrade
+strict-dep-builds: true
+only-built-dependencies:
+  - esbuild
+  - sharp

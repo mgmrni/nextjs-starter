@@ -4,8 +4,8 @@
   "service": "node",
   "workspaceFolder": "/workspace",
   // "forwardPorts": [3000],
-  "postCreateCommand": "yarn install",
-  "postStartCommand": "yarn dev",
+  "postCreateCommand": "pnpm install",
+  "postStartCommand": "pnpm dev",
   "remoteUser": "root",
   "customizations": {
     "vscode": {

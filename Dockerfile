@@ -4,18 +4,18 @@
 FROM node:24-bullseye AS builder
 WORKDIR /app
 
-# Yarn有効化
+# pnpm 有効化
 RUN corepack enable
-RUN corepack prepare yarn@stable --activate
+RUN corepack prepare pnpm@11 --activate
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY package.json .npmrc ./
+RUN pnpm install
 
 COPY . .
 
 # Prisma生成とNext.jsビルド
-# RUN yarn prisma generate
-RUN yarn build
+# RUN pnpm prisma generate
+RUN pnpm build
 
 # ----------------------------
 # Runtime stage
@@ -25,7 +25,7 @@ WORKDIR /app
 
 # 必要なファイルだけコピー
 COPY --from=builder /package.json ./
-COPY --from=builder /yarn.lock ./
+COPY --from=builder /pnpm-lock.yaml ./
 COPY --from=builder /node_modules ./node_modules
 COPY --from=builder /.next ./.next
 # COPY --from=builder /prisma ./prisma
@@ -33,4 +33,4 @@ COPY --from=builder /.next ./.next
 ENV NODE_ENV=production
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["node_modules/.bin/next", "start"]
