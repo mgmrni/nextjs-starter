@@ -32,7 +32,8 @@
         "MS-CEINTL.vscode-language-pack-ja",
         "oderwat.indent-rainbow",
         "PKief.material-icon-theme",
-        "prisma.prisma"
+        "prisma.prisma",
+        "Anthropic.claude-code"
       ]
     }
   },
