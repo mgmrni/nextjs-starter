@@ -1,7 +1,9 @@
 # 使い方
 
+Docker, VSCodeが必要です。
+
 - [ここ](https://github.com/mgmrni/nextjs-starter)から `Use This Template` する
-- VSCodeで開く
+- VSCodeで開く（ `Dev Containers` (ms-vscode-remote.remote-containers) の拡張機能を入れておく）
 - 各種設定を行う
   - `package.json` の `name` をシステム名に
   - `docker-compose.yml` の `container_name` を自由に
