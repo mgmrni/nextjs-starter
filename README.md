@@ -1,3 +1,18 @@
+# 使い方
+
+- [ここ](https://github.com/mgmrni/nextjs-starter)から `Use This Template` する
+- VSCodeで開く
+- 各種設定を行う
+  - `package.json` の `name` をシステム名に
+  - `docker-compose.yml` の `container_name` を自由に
+  - `.devcontainer/devcontainer.json` の `name` を自由に
+  - `.devcontainer/docker-compose.yml` の `ports` の3001の部分を、このシステム用の番号にする
+- VSCode左下から「コンテナーで再度開く」
+- [http://localhost:3001](http://localhost:3001) を確認（さっき編集したポート番号で）
+- 公開したくなったらvercelへ
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -5,14 +20,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
